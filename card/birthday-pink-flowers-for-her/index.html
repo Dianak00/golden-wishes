@@ -2,14 +2,48 @@
 <html lang="en">
 
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-62W3PT2QXH"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-62W3PT2QXH');
-    </script>
+  <!-- Google Analytics - load after consent -->
+<script>
+
+  const savedConsent = localStorage.getItem("gw_analytics_consent");
+
+if (savedConsent === "rejected") {
+  document.cookie.split(";").forEach((cookie) => {
+    const name = cookie.split("=")[0].trim();
+
+    if (name === "_ga" || name.startsWith("_ga_")) {
+      for (const path of ["/", "/golden-wishes/"]) {
+        document.cookie =
+          `${name}=; Max-Age=0; Path=${path}; SameSite=Lax`;
+      }
+    }
+  });
+}
+  window.loadGoogleAnalytics = function () {
+    if (window.gaLoaded) return;
+
+    window.gaLoaded = true;
+    window.dataLayer = window.dataLayer || [];
+
+    window.gtag = function () {
+      window.dataLayer.push(arguments);
+    };
+
+    window.gtag("js", new Date());
+    window.gtag("config", "G-62W3PT2QXH");
+
+    const script = document.createElement("script");
+    script.async = true;
+    script.src =
+      "https://www.googletagmanager.com/gtag/js?id=G-62W3PT2QXH";
+
+    document.head.appendChild(script);
+  };
+
+  if (localStorage.getItem("gw_analytics_consent") === "accepted") {
+    window.loadGoogleAnalytics();
+  }
+</script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#fcf9f5" />
@@ -21,8 +55,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Great+Vibes&display=swap"
         rel="stylesheet" />
-  <script type="module" crossorigin src="/golden-wishes/assets/index-8vY_zo-T.js"></script>
-  <link rel="stylesheet" crossorigin href="/golden-wishes/assets/index-DQ_EaEF0.css">
+  <script type="module" crossorigin src="/golden-wishes/assets/index-auSVR0e4.js"></script>
+  <link rel="stylesheet" crossorigin href="/golden-wishes/assets/index-DAX3cHq7.css">
 
     <meta name="description" content="A delicate animated birthday greeting with beautiful pink flowers and a warm, meaningful birthday wish." />
     <link rel="canonical" href="https://dianak00.github.io/golden-wishes/card/birthday-pink-flowers-for-her/" />
