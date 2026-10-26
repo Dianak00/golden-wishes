@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Google Analytics - load after consent -->
+<script>
+
+  const savedConsent = localStorage.getItem("gw_analytics_consent");
+
+if (savedConsent === "rejected") {
+  document.cookie.split(";").forEach((cookie) => {
+    const name = cookie.split("=")[0].trim();
+
+    if (name === "_ga" || name.startsWith("_ga_")) {
+      for (const path of ["/", "/golden-wishes/"]) {
+        document.cookie =
+          `${name}=; Max-Age=0; Path=${path}; SameSite=Lax`;
+      }
+    }
+  });
+}
+  window.loadGoogleAnalytics = function () {
+    if (window.gaLoaded) return;
+
+    window.gaLoaded = true;
+    window.dataLayer = window.dataLayer || [];
+
+    window.gtag = function () {
+      window.dataLayer.push(arguments);
+    };
+
+    window.gtag("js", new Date());
+    window.gtag("config", "G-62W3PT2QXH");
+
+    const script = document.createElement("script");
+    script.async = true;
+    script.src =
+      "https://www.googletagmanager.com/gtag/js?id=G-62W3PT2QXH";
+
+    document.head.appendChild(script);
+  };
+
+  if (localStorage.getItem("gw_analytics_consent") === "accepted") {
+    window.loadGoogleAnalytics();
+  }
+</script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#fcf9f5" />
+    <meta name="google-site-verification" content="pKGIHIJHulzXsdQjFbE5FivmpOSncuYRXS7t1gNpaTI" />
+    <title>Autumn Love – Every Season Is Beautiful With You | Golden Wishes</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Great+Vibes&display=swap"
+        rel="stylesheet" />
+  <script type="module" crossorigin src="/golden-wishes/assets/index-BhDINBhF.js"></script>
+  <link rel="stylesheet" crossorigin href="/golden-wishes/assets/index-B1deonE2.css">
+
+    <meta name="description" content="A romantic animated autumn greeting featuring golden falling leaves, glowing lanterns, a peaceful sunset, and a beautiful message: Every Season Is Beautiful With You. A lovely way to share warmth and affection with someone special." />
+    <link rel="canonical" href="https://dianak00.github.io/golden-wishes/card/autumn-love/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Autumn Love – Every Season Is Beautiful With You | Golden Wishes" />
+    <meta property="og:description" content="A romantic animated autumn greeting featuring golden falling leaves, glowing lanterns, a peaceful sunset, and a beautiful message: Every Season Is Beautiful With You. A lovely way to share warmth and affection with someone special." />
+    <meta property="og:url" content="https://dianak00.github.io/golden-wishes/card/autumn-love/" />
+    <meta property="og:image" content="https://dianak00.github.io/golden-wishes/cards/autumn-love-preview.gif" />
+    <meta property="og:site_name" content="Golden Wishes" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Autumn Love – Every Season Is Beautiful With You | Golden Wishes" />
+    <meta name="twitter:description" content="A romantic animated autumn greeting featuring golden falling leaves, glowing lanterns, a peaceful sunset, and a beautiful message: Every Season Is Beautiful With You. A lovely way to share warmth and affection with someone special." />
+    <meta name="twitter:image" content="https://dianak00.github.io/golden-wishes/cards/autumn-love-preview.gif" />
+  
+</head>
+
+<body>
+    <div id="root"><main class="seo-static-content"><article><h1>Autumn Love – Every Season Is Beautiful With You</h1><p>A romantic animated autumn greeting featuring golden falling leaves, glowing lanterns, a peaceful sunset, and a beautiful message: Every Season Is Beautiful With You. A lovely way to share warmth and affection with someone special.</p><img src="https://dianak00.github.io/golden-wishes/cards/autumn-love-preview.gif" alt="Autumn Love – Every Season Is Beautiful With You" width="400" height="500"/><p>Discover this animated birthday greeting on Golden Wishes. Download it and share a beautiful moment with someone special.</p><a href="https://dianak00.github.io/golden-wishes/cards/autumn-love-preview.gif" download="">Download animated greeting</a><p><a href="https://dianak00.github.io/golden-wishes/">Explore more greeting cards</a></p></article></main></div>
+</body>
+
+</html>
